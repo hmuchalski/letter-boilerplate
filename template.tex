@@ -21,8 +21,11 @@
 
 $if(letterhead)$
 \usepackage{wallpaper}
+\addtolength{\wpXoffset}{-44.5mm}
+\addtolength{\wpYoffset}{100mm}
 % \ThisULCornerWallPaper{1}{letterhead-front.pdf} % Uncomment to include a different letterhead on the first page
-\ULCornerWallPaper{1}{letterhead.pdf}
+\CenterWallPaper{0.4}{letterhead.pdf}
+
 $endif$
 
 % LANGUAGE
@@ -86,20 +89,32 @@ $endif$
 % DOCUMENT
 %--------------------------------
 \begin{document}
+
+%This inserts an logo image and space blow it
+%\begin{FlushRight}
+%  \IfFileExists{logo.pdf}
+%  {
+%    \includegraphics[height=4\baselineskip]{logo.pdf} \par
+%  }
+%  {
+%    \vspace{4\baselineskip}
+%  }
+%\end{FlushRight}
+
 \small
 \textsc{\textbf{$author$}}
 $for(from)$
 \textbullet{} \textsc{$from$}
 $endfor$
 
-\vspace{1em}
+\vspace{2em}
 
-\normalsize \sffamily
+\normalsize \rmfamily
 $for(to)$
 $to$\\
 $endfor$
 
-\vspace{3em}
+\vspace{2em}
 
 \rmfamily
 \begin{flushright}
@@ -109,22 +124,22 @@ $endfor$
 \vspace{1em}
 
 $if(subject)$
-\textbf{$subject$}
+Re: \textbf{$subject$}
 $endif$
 
 \vspace{1em}
 
 $body$
 
-\begin{FlushRight}
+\begin{FlushLeft}
   \IfFileExists{signature.pdf}
   {
-    \includegraphics[height=5.5\baselineskip]{signature.pdf} \par
+    \includegraphics[height=3\baselineskip]{signature.pdf} \par
   }
   {
-    \vspace{5.5\baselineskip}
+    \vspace{3.5\baselineskip}
   }
   $author$
-\end{FlushRight}
+\end{FlushLeft}
 
 \end{document}
