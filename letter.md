@@ -1,6 +1,9 @@
 ---
-subject: Recommendation Letter
+subject: PUT SUBJECT HERE
 author: Hubert Muchalski
+affiliation:
+- Assistant Professor of Chemistry
+- California State University, Fresno
 city: Fresno
 from:
 - Dept. of Chemistry
@@ -8,23 +11,23 @@ from:
 - M/S SB70
 - Fresno, CA
 to:
-- Society for Advancement of
-- Chicanos/Hispanics and Native
-- Americans in Science
+#- Society for Advancement of
+#- Chicanos/Hispanics and Native
+#- Americans in Science
 
 # Settings
 mainfont: Minion Pro
 altfont: Helvetica Neue
 monofont: Inconsolata
 lang: english
-fontsize: 11pt
-geometry: letterpaper, left=38mm, right=38mm, top=63mm, bottom=35mm
+fontsize: 10pt
+geometry: letterpaper, left=38mm, right=38mm, top=60mm, bottom=35mm
 letterhead: true
 # customdate: YYYY-MM-DD
 ---
 
-To Whom it May Concern:
+Tho Whom It May Concern:
 
-Lorem Ipsum
 
-Sincerely,
+
+Sincerely Yours,

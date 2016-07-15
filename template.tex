@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[$fontsize$, a4paper]{article}
+\documentclass[$fontsize$, letterpaper]{article}
 \usepackage{fontspec}
 
 % LAYOUT
@@ -20,11 +20,12 @@
 \setlist{nolistsep}
 
 $if(letterhead)$
-\usepackage{wallpaper}
-\addtolength{\wpXoffset}{-44.5mm}
-\addtolength{\wpYoffset}{100mm}
+\usepackage{wallpaper} % Pastes background image
+\addtolength{\wpXoffset}{-50.8mm} %position the image
+\addtolength{\wpYoffset}{90mm}
 % \ThisULCornerWallPaper{1}{letterhead-front.pdf} % Uncomment to include a different letterhead on the first page
-\CenterWallPaper{0.4}{letterhead.pdf}
+\CenterWallPaper{0.3}{letterhead.pdf} % Uncomment for color logo
+% \CenterWallPaper{0.4}{letterhead-bw.pdf} % Uncomment for BW logo
 
 $endif$
 
@@ -90,38 +91,26 @@ $endif$
 %--------------------------------
 \begin{document}
 
-%This inserts an logo image and space blow it
-%\begin{FlushRight}
-%  \IfFileExists{logo.pdf}
-%  {
-%    \includegraphics[height=4\baselineskip]{logo.pdf} \par
-%  }
-%  {
-%    \vspace{4\baselineskip}
-%  }
-%\end{FlushRight}
-
 \small
 \textsc{\textbf{$author$}}
 $for(from)$
 \textbullet{} \textsc{$from$}
 $endfor$
 
-\vspace{2em}
+\vspace{1em}
 
 \normalsize \rmfamily
 $for(to)$
 $to$\\
+\vspace{1em}
 $endfor$
 
-\vspace{2em}
+
 
 \rmfamily
 \begin{flushright}
   $city$, $if(customdate)$\DTMusedate{customdate}$else$\today$endif$
 \end{flushright}
-
-\vspace{1em}
 
 $if(subject)$
 Re: \textbf{$subject$}
@@ -130,16 +119,19 @@ $endif$
 \vspace{1em}
 
 $body$
-
+% \ClearWallPaper %Uncomment for two-page letters
 \begin{FlushLeft}
   \IfFileExists{signature.pdf}
   {
-    \includegraphics[height=3\baselineskip]{signature.pdf} \par
+    \includegraphics[height=2.5\baselineskip]{signature.pdf} \par
   }
   {
-    \vspace{3.5\baselineskip}
+    \vspace{2.5\baselineskip}
   }
-  $author$
+  $author$\\
+  $for(affiliation)$
+  $affiliation$\\
+  $endfor$
 \end{FlushLeft}
 
 \end{document}
