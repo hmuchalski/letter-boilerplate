@@ -21,8 +21,8 @@
 
 $if(letterhead)$
 \usepackage{wallpaper} % Pastes background image
-\addtolength{\wpXoffset}{-50.8mm} %position the image
-\addtolength{\wpYoffset}{90mm}
+\addtolength{\wpXoffset}{-46.5mm} %position the image
+\addtolength{\wpYoffset}{105mm}
 % \ThisULCornerWallPaper{1}{letterhead-front.pdf} % Uncomment to include a different letterhead on the first page
 \CenterWallPaper{0.3}{letterhead.pdf} % Uncomment for color logo
 % \CenterWallPaper{0.4}{letterhead-bw.pdf} % Uncomment for BW logo
@@ -97,7 +97,7 @@ $for(from)$
 \textbullet{} \textsc{$from$}
 $endfor$
 
-\vspace{1em}
+\vspace{2em}
 
 \normalsize \rmfamily
 $for(to)$
@@ -113,17 +113,17 @@ $endfor$
 \end{flushright}
 
 $if(subject)$
-Re: \textbf{$subject$}
+\textbf{Re: $subject$}
 $endif$
 
-\vspace{1em}
+\vspace{2em}
 
 $body$
-% \ClearWallPaper %Uncomment for two-page letters
+\ClearWallPaper %Uncomment for two-page letters
 \begin{FlushLeft}
   \IfFileExists{signature.pdf}
   {
-    \includegraphics[height=2.5\baselineskip]{signature.pdf} \par
+    \includegraphics[height=2\baselineskip]{signature.pdf} \par
   }
   {
     \vspace{2.5\baselineskip}
