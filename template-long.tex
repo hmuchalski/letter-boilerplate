@@ -7,7 +7,7 @@
 % LAYOUT
 %--------------------------------
 \usepackage{geometry}
-\geometry{$geometry$}
+\geometry{left=38mm, right=38mm, top=50mm, bottom=35mm}
 
 % No page numbers
 \pagenumbering{gobble}
@@ -21,10 +21,10 @@
 
 $if(letterhead)$
 \usepackage{wallpaper} % Pastes background image
-\addtolength{\wpXoffset}{-46.5mm} %position the image
-\addtolength{\wpYoffset}{105mm}
+\addtolength{\wpXoffset}{-38.7mm} %position the image
+\addtolength{\wpYoffset}{100mm}
 % \ThisULCornerWallPaper{1}{letterhead-front.pdf} % Uncomment to include a different letterhead on the first page
-\CenterWallPaper{0.3}{letterhead.pdf} % Uncomment for color logo
+\CenterWallPaper{0.4}{letterhead.pdf} % Uncomment for color logo
 % \CenterWallPaper{0.4}{letterhead-bw.pdf} % Uncomment for BW logo
 
 $endif$
@@ -92,19 +92,18 @@ $endif$
 \begin{document}
 
 \small
-\textsc{\textbf{$author$}}
+\textsc{\textbf{$author$}} 
 $for(from)$
-\textbullet{} \textsc{$from$}
+\textbullet{} \textsc{$from$} 
 $endfor$
 
-\vspace{2em}
+\vspace{3em}
 
 \normalsize \rmfamily
 $for(to)$
 $to$\\
-% \vspace{1em}
 $endfor$
-
+\vspace{1em}
 
 
 \rmfamily
@@ -133,5 +132,10 @@ $body$
   $affiliation$\\
   $endfor$
 \end{FlushLeft}
+
+\vspace{1em}
+$for(cc)$
+  CC: $cc$\\
+$endfor$
 
 \end{document}
